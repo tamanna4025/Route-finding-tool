@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>Rapid RouteVisualizer</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width = device-width, initial-scal = 1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@100&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="banner">
+      <img
+        src="https://1.bp.blogspot.com/-ANImyc3cbM4/YLTZB9e6urI/AAAAAAAAUX8/5IMRTMxdRo0cUYHSwMZvamAKt4rq8HwtwCLcBGAsYHQ/s2765/LOGO1.png"
+        class="logo"
+      />
+      <div class="banner-text">
+        <h1>Creative Study</h1>
+        <p>For Your Help</p>
+      </div>
+      <div class="banner-btn">
+        <a href="read algo/readMe.html"><span></span> Read Algo</a>
+        <a href="Pathfinding-Visualizer-master/index.html"
+          ><span></span> Algo Tool</a
+        >
+      </div>
+    </section>
+    <dir id="sidenav">
+      <nav>
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="contact_us.html">CONTACT US</a></li>
+        </ul>
+      </nav>
+    </dir>
+    <dir id="menuBtn">
+      <img
+        src="https://1.bp.blogspot.com/-4ybgRTrr4HQ/YLTZr9-NNgI/AAAAAAAAUYM/tgQnfm74XGc1eswop_kns-qDUTAjwkYXgCLcBGAsYHQ/s200/menu.png"
+        id="menu"
+      />
+    </dir>
+
+    <script type="text/javascript">
+      var menuBtn = document.getElementById("menuBtn");
+      var sidenav = document.getElementById("sidenav");
+      var menu = document.getElementById("menu");
+
+      sidenav.style.right = "-250px";
+
+      menuBtn.onclick = function () {
+        if (sidenav.style.right == "-250px") {
+          sidenav.style.right = "0";
+          menu.src =
+            "https://1.bp.blogspot.com/-Y_lzYi0OjBo/YLTZ7a9TwCI/AAAAAAAAUYY/G6ah-nbHl_s9Y0wIYiVcTd1QScxCGYmsQCLcBGAsYHQ/s200/close.png";
+        } else {
+          sidenav.style.right = "-250px";
+          menu.src =
+            "https://1.bp.blogspot.com/-4ybgRTrr4HQ/YLTZr9-NNgI/AAAAAAAAUYM/tgQnfm74XGc1eswop_kns-qDUTAjwkYXgCLcBGAsYHQ/s200/menu.png";
+        }
+      };
+    </script>
+  </body>
+</html>

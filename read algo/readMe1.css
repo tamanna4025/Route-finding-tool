@@ -1,0 +1,139 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    transition: all .2s linear; 
+    text-transform: capitalize;
+    font-family: sans-serif;
+    
+    }
+    
+    html{
+        font-size: 60.5%;
+        scroll-behavior: smooth;
+    
+    }
+    
+    body{
+        overflow-x: hidden;
+        
+    }
+    
+    
+    .navbar{
+        position: fixed;
+        height:100%;
+        width:25vw;
+/* border: 2px solid black; */
+background: linear-gradient(rgba(0,0,0,0.5),#06463f);
+    }
+    .navbar ul{
+display: flex;
+flex-direction: column;
+    }
+    .navbar li{
+        list-style: none;
+        padding: 12px 14px;
+        margin:12px;
+        
+    }
+    .navbar li a{
+        font-size: 2.5rem;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .navbar li a:hover{
+        font-size: 3rem;
+        color: #fff;
+        background: red;
+        text-decoration: none;
+    }
+
+    #intro{
+        /* background: #333; */
+        background: linear-gradient(rgba(0,0,0,0.5),#009688);
+margin-left: 380px;
+height: 100%;
+color: #fff;
+    }
+.heading{
+    /* margin:2px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.heading h1{
+    margin: 12px;
+    font-size: 3.8rem;
+    position: relative;
+}
+.heading h1::after{
+    content: "";
+    position: absolute;
+    bottom:-1rem;
+    left:42%;
+    transform: translateX(-50);
+    height: 0.5rem;
+    width:60%;
+    background:rgb(238, 40, 40) ;
+}
+
+.dsLogo{
+    height: 132px;
+    width:150px;
+}
+.dsLogo img{
+    z-index: -1;
+}
+.define{
+    margin: 2px 17px;
+    padding: 92px 9px;
+    
+}
+
+#intro h5{
+    font-size: 2.8rem;
+}
+
+#intro p{
+    margin:12px 2px;
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: inherit;
+}
+
+.short{
+    margin: -116px 17px;
+    padding: 92px 9px;
+}
+
+.graph{
+    margin: -116px 17px;
+    padding: 92px 9px;
+}
+.graph img{
+    width:70%;
+}
+.img{
+    color: black;
+    font-weight: bold;
+}
+
+.imp{
+    margin: -116px 17px;
+    padding: 92px 9px;
+}
+
+#btn{
+    margin:2rem 145rem;
+        font-size: large;
+        padding: 10px 15px;
+        font-weight: bold;
+}
+#btn:hover{
+    background: red;
+}

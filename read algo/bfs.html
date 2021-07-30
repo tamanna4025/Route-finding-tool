@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breadth First Search</title>
+    <link rel="stylesheet" href="bfs.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Breadth First Search Algorithm</h1>
+      <p>
+        Breadth first search is a graph traversal algorithm that starts
+        traversing the graph from root node and explores all the neighbouring
+        nodes. Then, it selects the nearest node and explore all the unexplored
+        nodes. The algorithm follows the same process for each of the nearest
+        node until it finds the goal.
+      </p>
+      <br />
+      <br />
+      <p>
+        The algorithm of breadth first search is given below. The algorithm
+        starts with examining the node A and all of its neighbours. In the next
+        step, the neighbours of the nearest node of A are explored and process
+        continues in the further steps. The algorithm explores all neighbours of
+        all the nodes and ensures that each node is visited exactly once and no
+        node is visited twice.
+      </p>
+
+      <div class="algo">
+        <h3>Algorithm</h3>
+        <ul>
+          <li>
+            <b>Step 1:</b> SET STATUS = 1 (ready state) for each node in G
+          </li>
+          <li>
+            <b>Step 2:</b> Enqueue the starting node A and set its STATUS =
+            2(waiting state)
+          </li>
+          <li><b>Step 3:</b> Repeat Steps 4 and 5 until QUEUE is empty</li>
+          <li>
+            <b>Step 4:</b> Dequeue a node N. Process it and set its STATUS = 3
+            (processed state).
+          </li>
+          <li>
+            <b>Step 5:</b> Enqueue all the neighbours of N that are in the ready
+            state (whose STATUS = 1) and set their STATUS = 2 (waiting state)
+            [END OF LOOP]
+          </li>
+          <li><b>Step 6:</b> EXIT</li>
+        </ul>
+      </div>
+
+      <div class="example">
+        <h3>Example</h3>
+        <img src="bfs.gif" alt="" />
+        <p>
+          It starts at the root and explores all of it’s children in the next
+          level(neighbors) before moving to each of the root children, and then,
+          it explores the children of the root children, and so on. The
+          algorithm uses a queue to perform the BFS.
+        </p>
+        <div class="steps">
+          <ol type="1">
+            <li>
+              Add root node to the queue, and mark it as visited(already
+              explored).
+            </li>
+            <li>
+              Loop on the queue as long as it's not empty.
+              <ol type="1">
+                <li>
+                  Get and remove the node at the top of the queue(current).
+                </li>
+                <li>
+                  For every non-visited child of the current node, do the
+                  following:
+                  <ol type="1">
+                    <li>Mark it as visited.</li>
+                    <li>Check if it's the goal node, If so, then return it.</li>
+                    <li>Otherwise, push it to the queue.</li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+            <li>If queue is empty, then goal node was not found!</li>
+          </ol>
+        </div>
+      </div>
+      <button id="btn" onclick="myFunction()">Back To Home</button>
+    </div>
+  </body>
+  <script>
+    function myFunction() {
+      window.location.href = "readMe.html";
+    }
+  </script>
+</html>

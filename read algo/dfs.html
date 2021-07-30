@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depth First Search</title>
+    <link rel="stylesheet" href="dfs.css">
+</head>
+
+<body>
+
+    <body>
+        <div class="container">
+            <h1>Depth First Search Algorithm</h1>
+            <p>Depth first search (DFS) algorithm starts with the initial node of the graph G, and then goes to deeper
+                and deeper until we find the goal node or the node which has no children. The algorithm, then backtracks
+                from the dead end towards the most recent node that is yet to be completely unexplored.</p>
+            <br>
+            <br>
+            <p>The data structure which is being used in DFS is stack. The process is similar to BFS algorithm. In DFS,
+                the edges that leads to an unvisited node are called discovery edges while the edges that leads to an
+                already visited node are called block edges.</p>
+
+            <div class="algo">
+                <h3>Algorithm</h3>
+                <ul>
+                    <li><b>Step 1:</b> SET STATUS = 1 (ready state) for each node in G</li>
+                    <li><b>Step 2:</b> Push the starting node A on the stack and set its STATUS = 2 (waiting state)</li>
+                    <li><b>Step 3:</b> Repeat Steps 4 and 5 until STACK is empty</li>
+                    <li><b>Step 4:</b> Pop the top node N. Process it and set its STATUS = 3 (processed state)</li>
+                    <li><b>Step 5:</b> Push on the stack all the neighbours of N that are in the ready state (whose
+                        STATUS = 1) and set their
+                        STATUS = 2 (waiting state)
+                        [END OF LOOP]</li>
+                    <li><b>Step 6:</b> EXIT</li>
+                </ul>
+
+
+
+            </div>
+
+            <div class="example">
+                <h3>Example</h3>
+
+                <img src="dfs.gif" alt="">
+                <p>
+                    It starts at the root and explores one of it’s children’s sub tree, and then move to the next
+                    child’s sub tree, and so on. It uses stack, or recursion to perform the DFS.
+                </p>
+                <h4>Recursive</h4>
+                <div class="steps">
+                    <ol type="1">
+                        <li>Mark the current node as visited(initially current node is the root node)</li>
+                        <li>Check if current node is the goal, If so, then return it.</li>
+                        <li>Iterate over children nodes of current node, and do the following:
+                            <ol type="1">
+                                <li>Check if a child node is not visited.</li>
+                                <li>If so, then, mark it as visited.</li>
+                                <li>Go to it's sub tree recursively until you find the goal node(In other words, do the
+                                    same steps here passing the child node as the current node in the next recursive
+                                    call).</li>
+                                <li>If the child node has the goal node in this sub tree, then, return it.</li>
+
+
+                            </ol>
+                        </li>
+                        <li>If goal node is not found, then goal node is not in the tree!</li>
+                    </ol>
+                </div>
+
+                <h4>Iterative</h4>
+                <div class="steps">
+                    <ol type="1">
+                        <li>Add root node to the stack.</li>
+                        <li>Loop on the stack as long as it's not empty.
+                            <ol type="1">
+                                <li>Get the node at the top of the stack(current), mark it as visited, and remove it.</li>
+                                <li>For every non-visited child of the current node, do the following: 
+                                    <ol type="1">
+                                        <li>Check if it's the goal node, If so, then return this child node.</li>
+                                        <li>Otherwise, push it to the stack.</li>
+                                        
+                                    </ol>
+                                </li>
+        
+                            </ol>
+                        </li>
+                        <li>If stack is empty, then goal node was not found!</li>
+                    </ol>
+                </div>
+            </div>
+            <button id="btn" onclick="myFunction()">Back To Home</button>
+        </div>
+    </body>
+    <script>
+        function myFunction() {
+            window.location.href = "readMe.html";
+        }
+    </script>
+
+</html>
+</body>
+
+</html>

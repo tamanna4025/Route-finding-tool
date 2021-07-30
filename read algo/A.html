@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A* search</title>
+    <link rel="stylesheet" href="A.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>A* Search Algorithm</h1>
+        <p>A* search is the most commonly known form of best-first search. It uses heuristic function h(n), and cost to
+            reach the node n from the start state g(n). It has combined features of UCS and greedy best-first search, by
+            which it solve the problem efficiently. A* search algorithm finds the shortest path through the search space
+            using the heuristic function. This search algorithm expands less search tree and provides optimal result
+            faster. A* algorithm is similar to UCS except that it uses g(n)+h(n) instead of g(n).</p>
+        <p>In A* search algorithm, we use search heuristic as well as the cost to reach the node. Hence we can combine
+            both costs as following, and this sum is called as a fitness number.
+        </p>
+        <p>
+        <div class="heu">f(n)= g(n)+h(n) </div>
+        <p>Where, h(n)= estimated cost from node n to the goal.</p>
+        <p class=fn>f(n)=Estimated cost of the cheapest solution</p>
+        <p class=fn>g(n)=cost to reach node n from start state</p>
+        <div class="algo">
+            <h3>Algorithm</h3>
+            <ul>
+                <li><b>Step 1:</b> Place the starting node in the OPEN list.</li>
+                <li><b>Step 2:</b> Check if the OPEN list is empty or not, if the list is empty then return failure and
+                    stops.</li>
+                <li><b>Step 3:</b> Select the node from the OPEN list which has the smallest value of evaluation
+                    function (g+h), if node n is goal node then return success and stop, otherwise</li>
+                <li><b>Step 4:</b> Expand node n and generate all of its successors, and put n into the closed list. For
+                    each successor n', check whether n' is already in the OPEN or CLOSED list, if not then compute
+                    evaluation function for n' and place into Open list</li>
+                <li><b>Step 5:</b> Else if node n' is already in OPEN and CLOSED, then it should be attached to the back
+                    pointer which reflects the lowest g(n') value.</li>
+                <li><b>Step 6:</b> Return to <b>Step 2</b>.</li>
+            </ul>
+
+
+
+        </div>
+
+        <div class="example">
+            <p>A* is a combination of Dijkstra and Greedy. It uses distance from the root node plus heuristics distance
+                to the goal. The algorithm terminates when we find the goal node.</p>
+            <br>
+            <p><i>Given the same heuristic distances mentioned above.</i></p>
+            <img src="A.gif" alt="">
+            <div class="steps">
+                <ol type="1">
+                    <li>Assign dis[v] for all nodes = INT_MAX (distance from root node + heuristics of every node).</li>
+                    <li>Assign dis[root] = 0 + heuristic(root, goal) (distance from root node to itself + heuristics).
+                    </li>
+                    <li>Add root node to priority queue.</li>
+                    <li>Loop on the queue as long as it's not empty.
+                        <ol type="1">
+                            <li>In every loop, choose the node with the minimum distance from the root node in the queue
+                                + heuristic (root node will be selected first).</li>
+                            <li>Remove the current chosen node from the queue (vis[current] = true). </li>
+                            <li>If the current node is the goal node, then return it.</li>
+                            <li>For every child of the current node, do the following:
+                                <ol type="1">
+                                    <li>Assign temp = distance(root, current) + distance(current, child) +
+                                        heuristic(child, goal).</li>
+                                    <li>If temp < dis[child], then, assign dist[child]=temp. This denotes a shorter path
+                                            to child node has been found.</li>
+                                    <li>And, add child node to the queue if not already in the queue (thus, it's now
+                                        marked as not visited again).</li>
+                                </ol>
+                            </li>
+
+                        </ol>
+                    </li>
+                    <li>If queue is empty, then goal node was not found!</li>
+                </ol>
+            </div>
+        </div>
+        <button id="btn" onclick="myFunction()">Back To Home</button>
+    </div>
+</body>
+<script>
+    function myFunction() {
+        window.location.href = "readMe.html";
+    }
+</script>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+</body>
+
+</html>

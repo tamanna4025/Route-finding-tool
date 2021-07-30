@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greedy Best First Search</title>
+    <link rel="stylesheet" href="greedy.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Greedy Best First Search Algorithm</h1>
+        <p>Greedy best-first search algorithm always selects the path which appears best at that moment. It is the
+            combination of depth-first search and breadth-first search algorithms. It uses the heuristic function and
+            search. Best-first search allows us to take the advantages of both algorithms. With the help of best-first
+            search, at each step, we can choose the most promising node. In the best first search algorithm, we expand
+            the node which is closest to the goal node and the closest cost is estimated by heuristic function, i.e.</p>
+        <div class="heu">f(n)= g(n). </div>
+        <p>Where, h(n)= estimated cost from node n to the goal.</p>
+        <p>The greedy best first algorithm is implemented by the priority queue.</p>
+
+        <div class="algo">
+            <h3>Algorithm</h3>
+            <ul>
+                <li><b>Step 1:</b> Place the starting node into the OPEN list.</li>
+                <li><b>Step 2:</b> If the OPEN list is empty, Stop and return failure.</li>
+                <li><b>Step 3:</b> Remove the node n, from the OPEN list which has the lowest value of h(n), and places
+                    it in the CLOSED list.</li>
+                <li><b>Step 4:</b> Expand the node n, and generate the successors of node n.</li>
+                <li><b>Step 5:</b> Check each successor of node n, and find whether any node is a goal node or not. If
+                    any successor node is goal node, then return success and terminate the search, else proceed to Step
+                    6.</li>
+                <li><b>Step 6:</b>For each successor node, algorithm checks for evaluation function f(n), and then check
+                    if the node has been in either OPEN or CLOSED list. If the node has not been in both list, then add
+                    it to the OPEN list.</li>
+                <li><b>Step 7:</b>Return to Step 2.</li>
+            </ul>
+            </div>
+
+            <div class="example">
+                <h3>Example</h3>
+                <p>Greedy is an algorithm which makes a choice based on educated guesses(heuristics) at each stage. The
+                    node with shortest heuristic distance from the goal node will be explored next.</p>
+                <br>
+                <p><i>Given the heuristic distance of A, B, C, D, E, & F to goal node equals to 8, 8, 6, 5, 1, & 4
+                        respectively.</i></p>
+                <img src="./images/grredy.gif" alt="">
+                <div class="steps">
+                    <ol type="1">
+                        <li>Assign dis[v] for all nodes = INT_MAX (distance from every node to goal node).</li>
+                        <li>Assign dis[root] = heuristics(root, goal) (distance from root node to goal).</li>
+                        <li>Add root node to priority queue.</li>
+                        <li>Loop on the queue as long as it's not empty.
+                            <ol type="1">
+                                <li>In every loop, choose the node with the minimum heuristic distance from the goal
+                                    node in the queue(root node will be selected first).</li>
+                                <li>Remove the current chosen node from the queue (vis[current] = true).</li>
+                                <li>If the current chosen node is the goal node, then return it.</li>
+                                <li>For every child of the current node, do the following:
+                                    <ol type="1">
+                                        <li>If child node is already visited (previously removed from the queue), then
+                                            skip this iteration.</li>
+                                        <li>Assign dist[current] = heuristics(current, goal).</li>
+                                        <li>Add child node to the queue.</li>
+                                    </ol>
+                                </li>
+
+                            </ol>
+                        </li>
+                        <li>If queue is empty, then goal node was not found!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <button id="btn" onclick="myFunction()">Back To Home</button>
+        
+
+
+    </div>
+</body>
+<script>
+    function myFunction() {
+        window.location.href = "readMe.html";
+    }
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijkstra Algorithm</title>
+    <link rel="stylesheet" href="dij.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dijkstra Algorithm</h1>
+        <p>It is a greedy algorithm that solves the single-source shortest path problem for a directed graph G = (V, E)
+            with nonnegative edge weights, i.e., w (u, v) ≥ 0 for each edge (u, v) ∈ E.</p>
+        <p>Dijkstra's Algorithm maintains a set S of vertices whose final shortest - path weights from the source s have
+            already been determined. That's for all vertices v ∈ S; we have d [v] = δ (s, v). The algorithm repeatedly
+            selects the vertex u ∈ V - S with the minimum shortest - path estimate, insert u into S and relaxes all
+            edges leaving u.</p>
+        <p>Because it always chooses the "lightest" or "closest" vertex in V - S to insert into set S, it is called as
+            the greedy strategy.</p>
+
+        <div class="algo">
+            <h3>Algorithm</h3>
+            <ul>
+                <li><b>Step 1:</b> 1) Create a set sptSet (shortest path tree set) that keeps track of vertices included
+                    in shortest path tree, i.e., whose minimum distance from source is calculated and finalized.
+                    Initially, this set is empty. </li>
+                <li><b>Step 2:</b> Assign a distance value to all vertices in the input graph. Initialize all distance
+                    values as INFINITE. Assign distance value as 0 for the source vertex so that it is picked first.
+                </li>
+                <li><b>Step 3:</b> While sptSet doesn’t include all vertices
+                    <ol type="a">
+                        <li>Pick a vertex u which is not there in sptSet and has minimum distance value.</li>
+                        <li>Include u to sptSet. </li>
+                        <li>Update distance value of all adjacent vertices of u. To update the distance values, iterate
+                            through all adjacent vertices. For every adjacent vertex v, if sum of distance value of u
+                            (from source) and weight of edge u-v, is less than the distance value of v, then update the
+                            distance value of v. </li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+
+        <div class="example">
+            <p class=dij>A* is a combination of Dijkstra and Greedy. It uses distance from the root node plus heuristics distance
+                to the goal. The algorithm terminates when we find the goal node.Dijkstra’s algorithm tries to find the
+                shortest path from the starting(root) node to every node, hence we can get the shortest path from the
+                starting node to the goal.</p>
+            <img src="dij.gif" alt="">
+            <div class="steps">
+                <ol type="1">
+                    <li>Assign dis[v] for all nodes = INT_MAX (distance from root node to every other node)</li>
+                    <li>Assign dis[root] = 0(distance from root node to itself).
+                    </li>
+                    <li>Add all nodes to a priority queue.</li>
+                    <li>Loop on the queue as long as it's not empty.
+                        <ol type="1">
+                            <li>In every loop, choose the node with the minimum distance from the root node in the
+                                queue(root node will be selected first).</li>
+                            <li>Remove the current chosen node from the queue (vis[current] = true) </li>
+                            <li>If the current node is the goal node, then return it.</li>
+                            <li>For every child of the current node, do the following:
+                                <ol type="1">
+                                    <li>If child node is not already in the queue (already visited), then skip this
+                                        iteration.</li>
+                                    <li>Assign temp = dist[current] + distance from current to child node.</li>
+                                    <li>If temp < dist[child], then, assign dist[child]=temp. This denotes a shorter
+                                            path to child node has been found.</li>
+                                </ol>
+                            </li>
+
+                        </ol>
+                    </li>
+                    <li>If queue is empty, then goal node was not found!</li>
+                </ol>
+            </div>
+        </div>
+
+        <button id="btn" onclick="myFunction()">Back To Home</button>
+    </div>
+</body>
+<script>
+    function myFunction() {
+        window.location.href = "readMe.html";
+    }
+</script>
+
+</body>
+
+</html>

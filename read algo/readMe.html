@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Algo</title>
+    <link rel="stylesheet" href="readMe1.css">
+</head>
+
+<body>
+    <!-- <div class="container"> -->
+    <div class="top">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="bfs.html">Breadth first search </a></li>
+                <li><a href="dfs.html">Depth First Search</a></li>
+                <li><a href="greedy.html">Greedy Best First Search</a></li>
+                <li><a href="A.html">A* search</a></li>
+                <li><a href="dij.html">Dijkstra</a></li>
+            </ul>
+
+        </nav>
+        <section id="intro">
+            <div class="heading">
+                <span>
+                    <h1>Pathfinding Algorithms</h1>
+                </span>
+                <span><img src="algo2.jpg" class="dsLogo" alt=""></span>
+            </div>
+
+
+            <div class="define">
+                <h5>What are Pathfinding Algorithms?</h5>
+                <p>Pathfinding algorithms are usually an attempt to solve the shortest path problem in graph theory.
+                    They try to find the best path given a starting point and ending point based on some predefined
+                    criteria.</p>
+            </div>
+
+            <div class="short">
+                <h5>What is the shortest path problem?</h5>
+                <p>In graph theory, the shortest path problem is the problem of finding a path between two vertices (or
+                    nodes) in a graph such that the sum of the weights of its constituent edges is minimized.</p>
+                <p>That’s a pretty dense sentence, so let’s try and unpack it. What it is essentially trying to say is
+                    “Find the shortest path in between two points or nodes in a graph.</p>
+            </div>
+            <div class="graph">
+                <h5>What is a graph / graph theory?</h5>
+                <p>They are mathematical structures used to model pairwise relationships in between objects. A graph consists of nodes/vertices/points that are connected edges/links/lines. I know this may seem a little confusing but just look to the visual below for more clarification.</p>
+                <img src="graph.png" alt="">
+                <p class=img>The circles with letters in them are nodes/vertices/points and the lines connecting/relating the circles are the edges/links/lines. The letters in the circles uniquely represent that circle. The numbers on the lines represent how much it will cost to move along that line.</p>
+            </div>
+            <div class="imp">
+                <h5>Why are they important?</h5>
+                <p>Path finding algorithms are important because they are used in applications like google maps, satellite navigation systems, routing packets over the internet. The usage of pathfinding algorithms isn’t just limited to navigation systems. The overarching idea can be applied to other applications as well. The usage will become clearer as we talk about some examples and implementations of pathfinding algorithms.</p>
+            </div>
+         </div>
+         <button id="btn" onclick="myFunction()">Back</button>
+        </section>
+    </div>
+    
+</body>
+<script>
+    function myFunction() {
+        window.location.href = "/index.html";
+    }
+</script>
+</html>
